@@ -24,9 +24,8 @@ class PostIndex extends Component {
 
 	}
 	render() {
-		console.log('RENDER NUMBER : ' + NUM_OF_RENDERS,this.props.posts);
+		console.log(this.props.posts);
 		NUM_OF_RENDERS ++ ;
-		console.log('Next Render will be number ',NUM_OF_RENDERS);
 		return (
 			<div>
 			<h3>Posts</h3>
