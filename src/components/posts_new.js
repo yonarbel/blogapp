@@ -1,6 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {Field, reduxForm} from 'redux-form';
+import {Link} from 'react-router-dom';
 class PostsNew extends Component {
 
   renderField(field) {
@@ -26,6 +27,7 @@ const className = `form-group ${touched && error ? 'has-danger' : ''}`;
         <Field label="Category" name="category" component={this.renderField}/>
         <Field label="Post Content" name="content" component={this.renderField}/>
         <button type="submit" className="btn btn-primary">Submit</button>
+          <Link to="/" className="btn btn-danger">Cancel</Link>
       </form>
     );
   }
