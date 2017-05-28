@@ -1,3 +1,14 @@
 form a{
   margin-left: 5px;
 }
+
+.post-list {
+    width: 80%;
+    float: right;
+    display: inline-block;
+}
+
+.main-sidebar {
+    width: 20%;
+    float: left;
+}
