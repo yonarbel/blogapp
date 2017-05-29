@@ -16,9 +16,16 @@ import {
 import {Pagination} from 'react-bootstrap';
 
 class PostIndex extends Component {
+
+    constructor(props) {
+        super(props);
+        this.handlePageClick = this.handlePageClick.bind(this);
+    }
+
     state = {
         selected: [0]
     };
+
 
     componentDidMount() {
         this.props.fetchPosts('gotype');
@@ -46,6 +53,10 @@ class PostIndex extends Component {
             return this.props.posts[0].linter;
     }
 
+    handlePageClick(page) {
+        console.log('The page is ', page.selected);
+        this.props.fetchPosts(this.getCurrentLinter(), page.selected + 1);
+    }
     renderPosts() {
         var i = -1;
         return _.map(this.props.posts, (post) => {

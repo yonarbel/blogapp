@@ -15,8 +15,8 @@ const API_KEY = '?key=YONATANARBEL1234'
 
  }*/
 //http://localhost:3000goimports
-export function fetchPosts(linter) {
-    const request = axios.get(`/entries?linter=${linter}`);
+export function fetchPosts(linter, page = 1) {
+    const request = axios.get(`/entries?linter=${linter}&page=${page}`);
     return {
         type: FETCH_POSTS,
         payload: request
