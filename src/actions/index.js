@@ -1,7 +1,7 @@
 import axios from 'axios';
 export const FETCH_POSTS = 'fetch_posts';
 export const FETCH_LINTERS = 'fetch_linters';
-const ROOT_URL = "http://reduxblog.herokuapp.com/api";
+const ROOT_URL = "/api/v1";
 const API_KEY = '?key=YONATANARBEL1234'
 
 
@@ -16,7 +16,7 @@ const API_KEY = '?key=YONATANARBEL1234'
  }*/
 //http://localhost:3000goimports
 export function fetchPosts(linter, page = 1) {
-    const request = axios.get(`/entries?linter=${linter}&page=${page}`);
+    const request = axios.get(`${ROOT_URL}/entries?linter=${linter}&page=${page}`);
     return {
         type: FETCH_POSTS,
         payload: request
@@ -25,7 +25,7 @@ export function fetchPosts(linter, page = 1) {
 
 }
 export function fetchLinters() {
-    const request = axios.get(`/totals`);
+    const request = axios.get(`${ROOT_URL}/totals`);
     return {
         type: FETCH_LINTERS,
         payload: request

@@ -36,7 +36,7 @@ class ListExampleNested extends React.Component {
                 <ListItem
                     key={i}
                     onTouchTap={() => {
-                        this.props.fetchPosts(linter.linter)
+                        this.props.fetchPosts(linter.linter, 1)
                     }}
                     primaryText={linter.linter}
                     leftIcon={<Explore />}

@@ -80,15 +80,16 @@ class PostIndex extends Component {
         return (
             <div className="post-list">
 
-                <ReactPaginate previousLabel={"previous"}
-                               nextLabel={"next"}
+                <ReactPaginate previousLabel={"<"}
+                               nextLabel={">"}
                                breakLabel={<a href="">...</a>}
                                breakClassName={"break-me"}
+                               current={5}
                                pageCount={this.getPaginationSize()}
                                marginPagesDisplayed={2}
-                               pageRangeDisplayed={5}
+                               forcePage={5}
                                onPageChange={this.handlePageClick}
-                               containerClassName={"pagination"}
+                               containerClassName={"pagination text-xs-right"}
                                subContainerClassName={"pages pagination"}
                                activeClassName={"active"}/>
                 <h3>{this.getCurrentLinter()}</h3>
