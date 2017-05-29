@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-<<<<<<< HEAD
 import {bindActionCreators} from 'redux';
 import {Link} from 'react-router-dom';
 import ReactPaginate from 'react-paginate';
@@ -134,7 +133,6 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostIndex);
-=======
 import {fetchPosts} from '../actions'
 var NUM_OF_RENDERS = 1;
 class PostIndex extends Component {
@@ -179,4 +177,4 @@ function mapStateToProps(state){
 
 
 export default connect(mapStateToProps,{fetchPosts})(PostIndex);
->>>>>>> parent of 7d7245f... make it better app
+
