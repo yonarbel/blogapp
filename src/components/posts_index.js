@@ -1,5 +1,6 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {connect} from 'react-redux';
+<<<<<<< HEAD
 import {bindActionCreators} from 'redux';
 import {Link} from 'react-router-dom';
 import ReactPaginate from 'react-paginate';
@@ -133,3 +134,49 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostIndex);
+=======
+import {fetchPosts} from '../actions'
+var NUM_OF_RENDERS = 1;
+class PostIndex extends Component {
+
+	componentDidMount() {
+		this.props.fetchPosts();
+	}
+
+	renderPosts(){
+
+
+		return _.map(this.props.posts, post =>{
+
+			return(
+					<li className="list-group-item" key={post.id}>
+					{post.title}
+					</li>
+				);
+
+		});
+
+
+	}
+	render() {
+		console.log(this.props.posts);
+		NUM_OF_RENDERS ++ ;
+		return (
+			<div>
+			<h3>Posts</h3>
+			<ul className="list-group">
+				{this.renderPosts()}
+
+			</ul>
+			</div>
+			);
+	}
+}
+
+function mapStateToProps(state){
+	return {posts : state.posts};
+}
+
+
+export default connect(mapStateToProps,{fetchPosts})(PostIndex);
+>>>>>>> parent of 7d7245f... make it better app

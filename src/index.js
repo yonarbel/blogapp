@@ -2,10 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import {createStore, applyMiddleware} from 'redux';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import {BrowserRouter, Route} from 'react-router-dom';
 import reducers from './reducers';
 import promise from 'redux-promise';
 import PostsIndex from './components/posts_index';
+<<<<<<< HEAD
 import PostsNew from './components/posts_new';
 import ListExampleSimple from './components/sidebar';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -23,11 +24,17 @@ const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 =======
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise, logger)(createStore); // passing the promise module middlewear and creatStore function then store = [returned func(reducers)]
 >>>>>>> 602467c7f322e637c383feb906adce53f182cddb
+=======
+
+const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
+
+>>>>>>> parent of 7d7245f... make it better app
 
 ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
-  <BrowserRouter>
+    <Provider store={createStoreWithMiddleware(reducers)}>
+    <BrowserRouter>
     <div>
+<<<<<<< HEAD
       <MuiThemeProvider>
         <ListExampleSimple/>
       </MuiThemeProvider>
@@ -38,3 +45,10 @@ ReactDOM.render(
     </div>
   </BrowserRouter>
   </Provider>, document.querySelector('.root'));
+=======
+     <Route path="/" component={PostsIndex}/>
+    </div>
+    </BrowserRouter>
+    </Provider>
+    , document.querySelector('.container'));
+>>>>>>> parent of 7d7245f... make it better app
